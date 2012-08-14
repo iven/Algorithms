@@ -6,13 +6,12 @@
 int insert_sort(int array[], int length)
 {
     for (int i = 1; i < length; ++i) {
-        for (int j = i - 1; j >= 0; --j) {
-            if (array[j] > array[j + 1]) {
-                swap(array, j + 1, j);
-            } else {
-                break;
-            }
+        int j = i;
+        int key = array[i];
+        while (--j >= 0 && array[j] > key) {
+            array[j + 1] = array[j];
         }
+        array[j + 1] = key;
     }
     return 0;
 }
