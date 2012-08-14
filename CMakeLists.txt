@@ -1,4 +1,4 @@
 project(algorithms)
 
-add_executable(algorithms main.cpp)
+add_executable(algorithms main.c)
 
