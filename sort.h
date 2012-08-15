@@ -4,6 +4,7 @@
 #include <stddef.h>
 
 int insert_sort(int array[], int length);
+int heap_sort(int array[], int length);
 
 #endif // INSERT_H
 

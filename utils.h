@@ -5,7 +5,7 @@
 
 void print_array(int array[], int length);
 
-inline void swap(int array[], int i, int j)
+static __inline__ void swap(int array[], int i, int j)
 {
     int temp = array[i];
     array[i] = array[j];

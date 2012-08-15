@@ -1,6 +1,6 @@
 project(algorithms)
 
-set(CMAKE_C_FLAGS "-std=c99")
+set(CMAKE_C_FLAGS "-g -Wall -std=c99")
 
-add_executable(algorithms main.c sort.c utils.c)
+add_executable(algorithms main sort utils)
 
