@@ -1,9 +1,12 @@
+#include <stdio.h>
+
 #include "utils.h"
 
-void swap(int array[], int i, int j)
+void print_array(int array[], int length)
 {
-    int temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
+    for (int i = 0; i < length; ++i) {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
 }
 

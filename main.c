@@ -2,18 +2,16 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-#include "insert.h"
-
-#define ARRAY_LENGTH 10
+#include "sort.h"
+#include "utils.h"
 
 int main(void)
 {
-    int array[ARRAY_LENGTH] = {5, 2, 4, 6, 1, 9, 7, 8, 3, 0};
-    insert_sort(array, ARRAY_LENGTH);
+    int array[] = {5, 2, 4, 6, 1, 9, 7, 8, 3, 0};
 
-    for (int i = 0; i < ARRAY_LENGTH; ++i) {
-        printf("%d\n", array[i]);
-    }
+    insert_sort(array, GET_LENGTH(array));
+    print_array(array, GET_LENGTH(array));
+
     return EXIT_SUCCESS;
 }
 

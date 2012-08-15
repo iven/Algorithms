@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "insert.h"
+#include "sort.h"
 #include "utils.h"
 
 int insert_sort(int array[], int length)
