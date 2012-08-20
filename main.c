@@ -10,7 +10,8 @@ int main(void)
   int array[] = {5, 2, 4, 6, 1, 9, 7, 8, 3, 0};
 
   //insertion_sort(array, GET_LENGTH(array));
-  heap_sort(array, GET_LENGTH(array));
+  shell_sort(array, GET_LENGTH(array));
+  //heap_sort(array, GET_LENGTH(array));
 
   printf("Sorted Heap:\n");
   print_array(array, GET_LENGTH(array));

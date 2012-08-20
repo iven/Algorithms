@@ -43,6 +43,20 @@ int heap_sort(int array[], int length)
   return 0;
 }
 
+int shell_sort(int array[], int length)
+{
+  for (int gap = length / 2; gap > 0; gap--) {
+    for (int i = gap; i < length; i++) {
+      int j = i;
+      int key = array[i];
+      while ((j -= gap) >= 0 && array[j] > key) {
+        array[j + gap] = array[j];
+      }
+      array[j + gap] = key;
+    }
+  }
+}
+
 int insertion_sort(int array[], int length)
 {
   for (int i = 1; i < length; ++i) {
