@@ -12,5 +12,10 @@ static __inline__ void swap(int array[], int i, int j)
   array[j] = temp;
 }
 
+static __inline__ int max(int i, int j)
+{
+  return i > j ? i: j;
+}
+
 #endif
 

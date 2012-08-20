@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "sort.h"
 #include "utils.h"
@@ -55,6 +57,7 @@ int shell_sort(int array[], int length)
       array[j + gap] = key;
     }
   }
+  return 0;
 }
 
 int insertion_sort(int array[], int length)
@@ -67,6 +70,50 @@ int insertion_sort(int array[], int length)
     }
     array[j + 1] = key;
   }
+  return 0;
+}
+
+static void merge(int array[], int temp_array[], int length)
+{
+  int left = length / 2;
+  int i = 0, j = left, k = 0;
+
+  memcpy(temp_array, array, left * sizeof(int));
+
+  while (i < left && j < length)
+  {
+    if (temp_array[i] > array[j]) {
+      array[k++] = array[j++];
+    } else {
+      array[k++] = temp_array[i++];
+    }
+  }
+  if (i < left) {
+    memcpy(array + k, temp_array + i, left - i);
+  }
+}
+
+static void _merge_sort(int array[], int temp_array[], int length)
+{
+  if (length > 1) {
+    int left = length / 2, right = length - left;
+    _merge_sort(array, temp_array, left);
+    _merge_sort(array + left, temp_array, right);
+    merge(array, temp_array, length);
+  }
+
+}
+
+int merge_sort(int array[], int length)
+{
+  int *temp_array;
+
+  temp_array = malloc(length * sizeof(int));
+
+  _merge_sort(array, temp_array, length);
+
+  free(temp_array);
+
   return 0;
 }
 
