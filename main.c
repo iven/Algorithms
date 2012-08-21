@@ -13,7 +13,8 @@ int main(void)
   //insertion_sort(array, length);
   //shell_sort(array, length);
   //heap_sort(array, length);
-  merge_sort(array, length);
+  //merge_sort(array, length);
+  quick_sort(array, length);
 
   printf("Sorted Heap:\n");
   print_array(array, GET_LENGTH(array));

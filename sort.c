@@ -117,3 +117,52 @@ int merge_sort(int array[], int length)
   return 0;
 }
 
+/**
+ * Return median of left, center, and right.
+ * Order these and hide the pivot.
+ */
+static int get_median(int array[], int length)
+{
+  if (length > 1) {
+    int center = length / 2 - 1;
+
+    if (array[0] > array[center]) {
+      swap(array, 0, center);
+    }
+    if (array[0] > array[length - 2]) {
+      swap(array, 0, length - 2);
+    }
+    if (array[center] > array[length - 2]) {
+      swap(array, center, length - 2);
+    }
+
+    swap(array, center, length - 1);
+  }
+  return array[length - 1];
+}
+
+int quick_sort(int array[], int length)
+{
+  if (length > 1) {
+    int i = 0, j = length - 2;
+    int median = get_median(array, length);
+
+    print_array(array, length);
+    while (i < j) {
+      while (array[i] < median) { ++i; }
+      while (array[j] > median) { --j; }
+      if (i < j) {
+        swap(array, i++, j--);
+      } else {
+        break;
+      }
+    }
+    swap(array, i, length - 1);
+
+    quick_sort(array, i);
+    quick_sort(array + i + 1, length - i - 1);
+  }
+
+  return 0;
+}
+
