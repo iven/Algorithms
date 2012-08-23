@@ -148,11 +148,11 @@ int quick_sort(int array[], int length)
     int median = get_median(array, length);
 
     print_array(array, length);
-    while (i < j) {
-      while (array[i] < median) { ++i; }
-      while (array[j] > median) { --j; }
+    while (1) {
+      while (array[++i] < median) { }
+      while (array[--j] > median) { }
       if (i < j) {
-        swap(array, i++, j--);
+        swap(array, i, j);
       } else {
         break;
       }
